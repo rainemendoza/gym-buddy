@@ -14,3 +14,16 @@
 .nav-link :hover {
     color: white;
 }
+
+.about-section {
+    background-color: #d1e7dd;
+  }
+  
+  .about-heading {
+    color: #212529;
+    font-weight: bold;
+  }
+  
+  .about-content {
+    color: #2c3e50;
+  }
