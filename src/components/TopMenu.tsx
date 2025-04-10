@@ -14,22 +14,24 @@ const TopMenu = () => {
     <>
       {/* Top Navbar */}
       <Navbar className="navbar" expand="lg">
-        <Container className="d-flex justify-content-between align-items-center">
-          {/* Left side: Logo */}
-          <Navbar.Brand as={Link} href="/">
-            <Image src="/image.png" alt="Logo" fluid className="logo" />
-          </Navbar.Brand>
+        <Container fluid className="d-flex justify-content-between align-items-center">
+          <div className="d-flex align-items-center gap-3 ms-3">
+            <Button variant="outline-light" onClick={handleShow} className="border-0 burger">
+              ☰
+            </Button>
+            {/* Left side: Logo */}
+            <Navbar.Brand as={Link} href="/">
+              <Image src="/image.png" alt="Logo" fluid className="logo" />
+            </Navbar.Brand>
+          </div>
 
           {/* Right side: Nav Links + Toggle */}
-          <div className="d-flex align-items-center gap-3">
+          <div className="d-flex align-items-center gap-3 me-3">
             <Nav className="d-flex align-items-center gap-3">
               <Nav.Link as={Link} href="/">Home</Nav.Link>
               <Nav.Link as={Link} href="/explore">Explore</Nav.Link>
               <Nav.Link as={Link} href="/signin">Sign In</Nav.Link>
             </Nav>
-            <Button variant="outline-light" onClick={handleShow}>
-              ☰
-            </Button>
           </div>
         </Container>
       </Navbar>
