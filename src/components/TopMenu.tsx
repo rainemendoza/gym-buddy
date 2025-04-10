@@ -35,15 +35,15 @@ const TopMenu = () => {
       </Navbar>
 
       {/* Offcanvas from the left */}
-      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop={true}>
+      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>More Links</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
-            <Nav.Link as={Link} href="/about" onClick={handleClose}>About Us</Nav.Link>
-            <Nav.Link as={Link} href="/contact" onClick={handleClose}>Contact</Nav.Link>
-            <Nav.Link as={Link} href="/faq" onClick={handleClose}>FAQ</Nav.Link>
+            <Nav.Link className="nav-link2" as={Link} href="/about" onClick={handleClose}>About Us</Nav.Link>
+            <Nav.Link className="nav-link2" as={Link} href="/contact" onClick={handleClose}>Contact</Nav.Link>
+            <Nav.Link className="nav-link2" as={Link} href="/faq" onClick={handleClose}>FAQ</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
