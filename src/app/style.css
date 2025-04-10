@@ -20,9 +20,20 @@
 .nav-link2{
     color: black;
 }
+.nav-link2:hover{
+    color:rgb(120, 126, 121);
+}
 
 /* burger icon in the navbar */
 .burger:hover{
-    background-color: rgb(134, 137, 132);
+    background-color: rgb(94, 99, 90);
     color: white;
+}
+
+.burger-title{
+   margin-left: 1rem;
+}
+
+.side-bar{
+    width:0rem
 }

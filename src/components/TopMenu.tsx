@@ -37,9 +37,9 @@ const TopMenu = () => {
       </Navbar>
 
       {/* Offcanvas from the left */}
-      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop>
+      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop className="side-bar">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>More Links</Offcanvas.Title>
+          <Offcanvas.Title className="burger-title">More Links</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
