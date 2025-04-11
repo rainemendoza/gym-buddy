@@ -4,21 +4,23 @@
 }
 
 .navbar{
-    background-color: rgb(47, 45, 45);
+    background-color: #889677;
 }
 
 /* text color for the links in the navbar right side */
 .nav-link {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .nav-link:hover {
-    color: white;
+    color: #cfe2da;
 }
 
-/* text color for the offcanvas links */
+/* text color for the offcanvas links */    
 .nav-link2{
     color: black;
+    margin-left: 1rem !important; 
+
 }
 .nav-link2:hover{
     color:rgb(120, 126, 121);
@@ -31,9 +33,16 @@
 }
 
 .burger-title{
-   margin-left: 1rem;
+   margin-left: 2rem;
 }
 
+/* offcanvas for the burger */
 .side-bar{
-    width:0rem
+    width:22rem !important;
+}
+
+/* close button for burger */
+.side-bar-close{
+    margin-right: 1.2rem;
+    margin-top: 0.5rem;
 }
