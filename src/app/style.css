@@ -1,10 +1,10 @@
-/* UH Logo for the navbar */
+/* Logo for the navbar */
 .logo{
     width: 35px;
 }
 
 .navbar{
-    background-color: #889677;
+    background-color: #71987D;
 }
 
 /* text color for the links in the navbar right side */
@@ -46,3 +46,63 @@
     margin-right: 1.2rem;
     margin-top: 0.5rem;
 }
+
+/* container for the top of the page */
+.top-bg{
+    background-color: #F9AD76;
+}
+
+/* img of the school */
+.school-bg{
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* section for purpose */
+.section1{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 241, 233);
+}
+
+/* section for features */
+.section2{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(215, 210, 184, 0.871);
+}
+
+.text1 {
+    text-align: left;
+    font-size: 2.9rem;
+    margin-left: 10.2vw;
+    font-weight: 600;
+    font-family: 'open sans', sans-serif;
+    color: white;
+    letter-spacing: 0px;
+    line-height:50px;
+}
+
+.text2 {
+    text-align: left;
+    font-size: 1.9rem;
+    margin-top: 2rem;
+    margin-left: 10.2vw;
+    font-weight: 400;
+    line-height:35px;
+    font-family: 'open sans', sans-serif;
+    color: white !important;
+}
+
+.main-signup {
+    margin-left: 10.2vw;
+    margin-top: 0.7rem;
+}
+
+/* .textright{
+    margin-right: 1%;
+} */
+
