@@ -6,7 +6,7 @@ import { Navbar, Container, Nav, Image, Offcanvas, Button, Row, Col } from 'reac
 
 const Background = () => (
   <>
-    {/* orange block */}
+    {/* signup block */}
     <Container fluid className="top-bg p-0">
       <div className="d-flex align-items-center gap-4 me-1 p-0">
         <div>
@@ -17,7 +17,7 @@ const Background = () => (
           <Col className="textright">
             <p className="text1">A new way to enjoy the gym.</p>
             <p className="text1">Meet with fellow students.</p>
-            <p className="text2">Register now to get started.</p>
+            <p className="text2">Register now for free to get started.</p>
             <Button variant="outline-light" className="border-0 signup-button">
               Sign Up
             </Button>
@@ -26,14 +26,43 @@ const Background = () => (
       </div>
     </Container>
 
-    {/* content block */}
-    <Container fluid className="py-5 green section1">
-      <h2>Section 1</h2>
+    {/* calendar block */}
+    <Container fluid className="py-5 section1">
+      <div className="d-flex align-items-center gap-4 me-4">
+        <Row className="fullwidth-row align-items-center me-3">
+          <Col>
+            <p className="schedule-text">Set your schedule and see how other people match it.</p>
+          </Col>
+        </Row>
+        <div>
+          <Nav.Link className="" as={Link} href="/calendar">
+            <Image src="/calendar.png" fluid className="calendar-img" />
+          </Nav.Link>
+
+        </div>
+      </div>
     </Container>
 
-    {/* features block */}
-    <Container fluid className="py-5 orange section2">
-      <h2>Section 2</h2>
+    {/* profile block */}
+    <Container fluid className="py-5 section2">
+      <div className="d-flex align-items-center gap-4 me-4">
+        <Row className="fullwidth-row align-items-center me-3">
+          <Col>
+            <p className="schedule-text">Customize your profile and workout preferences</p>
+          </Col>
+        </Row>
+      </div>
+    </Container>
+
+    {/* messaging block */}
+    <Container fluid className="py-5 section3">
+      <div className="d-flex align-items-center gap-4 me-4">
+        <Row className="fullwidth-row align-items-center me-3">
+          <Col>
+            <p className="schedule-text">Meet up by messaging</p>
+          </Col>
+        </Row>
+      </div>
     </Container>
   </>
 );

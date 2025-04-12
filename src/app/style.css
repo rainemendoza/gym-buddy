@@ -4,20 +4,22 @@
 }
 
 .navbar{
-    background-color: #f1f8f3;
+    background-color: #e9f5ec;
     font-size: 1.2rem;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
     font-weight: 400;
+    height: 4.5rem;
 }
 
 /* text color for the links in the navbar right side */
 .nav-link {
     color: rgb(0, 0, 0);
-    
 }
 
 .nav-link:hover {
-    color: #cfe2da;
+    color: #5c8379;
+    text-decoration: underline !important;
+    text-underline-offset: 0.4rem;
 }
 
 /* text color for the offcanvas links */    
@@ -33,25 +35,29 @@
 /* burger icon in the navbar */
 .burger{
     /* background-color: rgb(88, 126, 115); */
-    color: black;
+    color: black !important;
 }
 
 .burger:hover{
-    background-color: rgb(88, 126, 115);
-    color: white;
+    background-color: #b9cec8b1;
+    color: black !important;
 }
 
 .burger:active{
-    background-color: rgb(88, 126, 115);
-    color: white;
+    background-color: rgb(178, 200, 187) !important;
 }
 
 /* offcanvas */
 .side-bar{
     width:22rem !important;
     background-color: rgb(244, 248, 241);
-    border-radius: 0.6rem;
+    border-radius: 0 0.6rem 0.6rem 0;
 }
+
+/* .offcanvas-backdrop{
+    background-color: rgba(0, 0, 0, 0.465) !important;
+    transition: transform 0.2s ease-in-out !important;
+} */
 
 /* close button for burger */
 .side-bar-close{
@@ -66,29 +72,6 @@
 /* container for the top of the page */
 .top-bg{
     background-color: #F9AD76;
-}
-
-/* img of the school */
-.school-bg{
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-}
-
-/* section for purpose */
-.section1{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(245, 241, 233);
-}
-
-/* section for features */
-.section2{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(215, 210, 184, 0.871);
 }
 
 .text1 {
@@ -123,6 +106,82 @@
     letter-spacing: 0.05rem;
     background-color: rgb(95, 105, 84);
 }
+
+.signup-button:hover{
+    background-color: rgb(104, 125, 98);
+    color: white;
+}
+.signup-button:active{
+    background-color: rgb(116, 135, 103) !important;
+    color: white !important;
+}
+
+.school-bg{
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* section for calendar */
+.section1{
+    margin-top: 2rem;
+    height: 70vh;
+    display: flex;
+    object-fit: cover;
+    background-color: rgb(194, 224, 195);
+}
+
+.schedule-text{
+    text-align: left;
+    font-size: 2.7rem;
+    margin-left: 8.2vw;
+    font-weight: 600;
+    font-family: 'open sans', sans-serif;
+    /* color: rgb(88, 84, 83); */
+    color: white;
+    letter-spacing: 0px;
+    line-height:50px;
+    margin-right: 9rem;
+    position: relative;
+    left: 2.2rem;
+}
+
+.calendar-img {
+    border-radius: 2rem;
+    max-width: 94%;
+    height: auto;
+    display: block;
+    position: relative;
+    right: 8.4rem;
+  }
+
+/* .expand-on-hover {
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+  
+.expand-on-hover:hover{
+    box-shadow: 0rem 0rem 3rem 0.3rem rgba(168, 161, 130, 0.177);
+} */
+
+/* section for profile */
+.section2{
+    margin-top: 2rem;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: #d0cc96;
+}
+
+/* section for messaging */
+.section3{
+    margin-top: 2rem;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-color: #bab2b2;
+}
+
 
 /* .info-button {
     font-size: 1.1rem;
