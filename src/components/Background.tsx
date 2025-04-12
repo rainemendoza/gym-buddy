@@ -17,8 +17,8 @@ const Background = () => (
           <Col className="textright">
             <p className="text1">A new way to enjoy the gym.</p>
             <p className="text1">Meet with fellow students.</p>
-            <p className="text2">Sign up now to get started.</p>
-            <Button variant="outline-dark" className="border-2 main-signup">
+            <p className="text2">Register now to get started.</p>
+            <Button variant="outline-light" className="border-0 signup-button">
               Sign Up
             </Button>
           </Col>

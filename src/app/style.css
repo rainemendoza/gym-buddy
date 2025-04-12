@@ -4,12 +4,16 @@
 }
 
 .navbar{
-    background-color: #71987D;
+    background-color: #f1f8f3;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    font-weight: 400;
 }
 
 /* text color for the links in the navbar right side */
 .nav-link {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
 }
 
 .nav-link:hover {
@@ -27,24 +31,36 @@
 }
 
 /* burger icon in the navbar */
+.burger{
+    /* background-color: rgb(88, 126, 115); */
+    color: black;
+}
+
 .burger:hover{
-    background-color: rgb(94, 99, 90);
+    background-color: rgb(88, 126, 115);
     color: white;
 }
 
-.burger-title{
-   margin-left: 2rem;
+.burger:active{
+    background-color: rgb(88, 126, 115);
+    color: white;
 }
 
-/* offcanvas for the burger */
+/* offcanvas */
 .side-bar{
     width:22rem !important;
+    background-color: rgb(244, 248, 241);
+    border-radius: 0.6rem;
 }
 
 /* close button for burger */
 .side-bar-close{
     margin-right: 1.2rem;
     margin-top: 0.5rem;
+}
+
+.burger-title{
+   margin-left: 2rem;
 }
 
 /* container for the top of the page */
@@ -88,7 +104,7 @@
 
 .text2 {
     text-align: left;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
     margin-left: 10.2vw;
     font-weight: 400;
@@ -97,12 +113,22 @@
     color: white !important;
 }
 
-.main-signup {
+.signup-button {
+    font-size: 1.1rem;
     margin-left: 10.2vw;
     margin-top: 0.7rem;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    background-color: rgb(95, 105, 84);
 }
 
-/* .textright{
-    margin-right: 1%;
+/* .info-button {
+    font-size: 1.1rem;
+    margin-left: 10.2vw;
+    margin-top: 1rem;
+    padding: 0.5rem 1.09rem;
+    border-radius: 1.5rem;
 } */
 
