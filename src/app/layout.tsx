@@ -21,9 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={classString}>
         <Providers>
-          {/* <TopMenu /> */}
           {children}
-          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
