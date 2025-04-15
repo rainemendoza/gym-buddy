@@ -1,0 +1,89 @@
+/* components/SignupComponent.module.css */
+
+/* Container styles - very similar to login */
+.signupContainer {
+    background-color: #ffffff;
+    padding: 30px 40px; /* Slightly more horizontal padding maybe */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    max-width: 500px; /* Adjust width as needed for signup */
+    margin: 20px;
+    /* Removed flex display as there's no logo side-by-side by default */
+}
+
+.signupBox {
+    /* No specific styles needed if signupContainer handles layout */
+    width: 100%;
+}
+
+.signupBox h2 {
+    font-size: 1.8em; /* Slightly larger title */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center; /* Center the Sign Up title */
+}
+
+/* Reusing input field styles */
+.inputField {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.inputField::placeholder {
+    color: #6c757d;
+}
+
+/* Reusing button styles */
+.submitButton {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #a7c4bc; /* Same button color */
+    color: #3f6159;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add some space above the button */
+}
+
+.submitButton:hover {
+    background-color: #96b3ac;
+}
+
+/* Error message styling */
+.errorMessage {
+    color: #dc3545; /* Standard error color (red) */
+    font-size: 0.9em;
+    margin-top: -10px; /* Pull up slightly below the last input */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Optional: Link style */
+.loginLink {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.loginLink a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+}
+
+.loginLink a:hover {
+    text-decoration: underline;
+}
+
+/* No responsive adjustments needed if it's already narrow */

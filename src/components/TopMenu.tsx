@@ -29,14 +29,14 @@ const TopMenu = () => {
           <div className="d-flex align-items-center gap-4 me-4">
             <Nav className="d-flex align-items-center gap-4">
               <Nav.Link as={Link} href="/explore">Explore</Nav.Link>
-              <Nav.Link as={Link} href="/signin">Sign In</Nav.Link>
+              <Nav.Link as={Link} href="/auth/signin">Sign In</Nav.Link>
             </Nav>
           </div>
         </Container>
       </Navbar>
 
       {/* Offcanvas from the left */}
-      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop={true} className="side-bar">
+      <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" backdrop className="side-bar">
         <Offcanvas.Header closeButton className="side-bar-close">
           <Offcanvas.Title className="burger-title">More Links</Offcanvas.Title>
         </Offcanvas.Header>
