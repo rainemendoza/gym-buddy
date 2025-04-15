@@ -1,61 +1,29 @@
-'use client';
+/* eslint-disable import/extensions */
+/* eslint-disable max-len */
+/* eslint-disable react/jsx-no-comment-textnodes */
+// pages/signup.js
+import React from 'react';
+import Head from 'next/head';
+import LoginComponent from '@/components/LoginComponent';
+import TopMenu from '@/components/TopMenu';
+import '@/app/style.css';
 
-import { signIn } from 'next-auth/react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-
-/** The sign in page. */
-const SignIn = () => {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
-    };
-    const email = target.email.value;
-    const password = target.password.value;
-    const result = await signIn('credentials', {
-      callbackUrl: '/list',
-      email,
-      password,
-    });
-
-    if (result?.error) {
-      console.error('Sign in failed: ', result.error);
-    }
-  };
-
+export default function SignupPage() {
   return (
-    <main>
-      <Container>
-        <Row className="justify-content-center">
-          <Col xs={5}>
-            <h1 className="text-center">Sign In</h1>
-            <Card>
-              <Card.Body>
-                <Form method="post" onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <input name="email" type="text" className="form-control" />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <input name="password" type="password" className="form-control" />
-                  </Form.Group>
-                  <Button type="submit" className="mt-3">
-                    Signin
-                  </Button>
-                </Form>
-              </Card.Body>
-              <Card.Footer>
-                Don&apos;t have an account?
-                <a href="/auth/signup">Sign up</a>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </main>
+    <>
+      <Head>
+        <title>Sign In</title>
+        <meta name="description" content="Create a new account" />
+      </Head>
+      {/* Centering the component on the page */}
+      <main>
+        <div>
+          <TopMenu />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: '#f0f2f5', padding: '20px 0' }}>
+          <LoginComponent />
+        </div>
+      </main>
+    </>
   );
-};
-
-export default SignIn;
+}
