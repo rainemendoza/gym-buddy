@@ -1,7 +1,7 @@
 import TopMenu from '../../components/TopMenu';
 import HeroSection from '../../components/HeroSection';
 import AboutSection from '../../components/AboutSection';
-import Footer from '../../components/Footer';
+import FooterMenu from '../../components/FooterMenu';
 import '../style.css';
 
 const Home = () => (
@@ -9,7 +9,7 @@ const Home = () => (
     <TopMenu />
     <HeroSection />
     <AboutSection />
-    {/* <Footer /> */}
+    <FooterMenu />
   </main>
 );
 
