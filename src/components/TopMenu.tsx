@@ -29,7 +29,7 @@ const TopMenu = () => {
           <div className="d-flex align-items-center gap-4 me-5 mt-4">
             <Nav className="d-flex align-items-center gap-4">
               <Nav.Link as={Link} href="/explore">Explore</Nav.Link>
-              <Nav.Link as={Link} href="/signin">Sign In</Nav.Link>
+              <Nav.Link as={Link} href="/auth/signin">Sign In</Nav.Link>
             </Nav>
           </div>
         </Container>

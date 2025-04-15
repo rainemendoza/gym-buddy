@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Container, Nav, Image, Offcanvas, Button, Row, Col } from 'react-bootstrap';
+import { Container, Nav, Image, Button, Row, Col } from 'react-bootstrap';
 
 const Background = () => (
   <>
@@ -19,7 +18,9 @@ const Background = () => (
             <p className="text1">Meet with fellow students.</p>
             <p className="text2">Register now for free to get started.</p>
             <Button variant="outline-light" className="border-0 signup-button">
-              Sign Up
+              <Nav.Link className="" as={Link} href="/auth/signup">
+                Sign Up
+              </Nav.Link>
             </Button>
           </Col>
         </Row>
