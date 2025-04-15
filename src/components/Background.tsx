@@ -54,17 +54,6 @@ const Background = () => (
         </Row>
       </div>
     </Container>
-
-    {/* messaging block */}
-    <Container fluid className="py-5 section3">
-      <div className="d-flex align-items-center gap-4 me-4">
-        <Row className="fullwidth-row align-items-center me-3">
-          <Col>
-            <p className="schedule-text">Meet up by messaging</p>
-          </Col>
-        </Row>
-      </div>
-    </Container>
   </>
 );
 
