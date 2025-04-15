@@ -1,7 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { Container, Nav, Image, Button, Row, Col } from 'react-bootstrap';
+import { Navbar, Container, Nav, Image, Offcanvas, Button, Row, Col } from 'react-bootstrap';
 
 const Background = () => (
   <>
@@ -18,9 +19,7 @@ const Background = () => (
             <p className="text1">Meet with fellow students.</p>
             <p className="text2">Register now for free to get started.</p>
             <Button variant="outline-light" className="border-0 signup-button">
-              <Nav.Link className="text-decoration-none" as={Link} href="/auth/signup">
-                Sign Up
-              </Nav.Link>
+              Sign Up
             </Button>
           </Col>
         </Row>
@@ -54,6 +53,17 @@ const Background = () => (
         </Row>
       </div>
     </Container>
+
+    {/* messaging block */}
+    {/* <Container fluid className="py-5 section3">
+      <div className="d-flex align-items-center gap-4 me-4">
+        <Row className="fullwidth-row align-items-center me-3">
+          <Col>
+            <p className="schedule-text">Meet up by messaging</p>
+          </Col>
+        </Row>
+      </div>
+    </Container> */}
   </>
 );
 
