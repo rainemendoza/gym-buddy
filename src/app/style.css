@@ -139,6 +139,11 @@
     font-family: 'open sans', sans-serif;
     /* color: rgb(88, 84, 83); */
     color: white;
+    letter-spacing: 0px;
+    line-height:50px;
+    margin-right: 9rem;
+    position: relative;
+    left: 2.2rem;
 }
 
 .about-section {
@@ -161,12 +166,6 @@
   
 .hero-section h1 {
   color: green;
-}
-    letter-spacing: 0px;
-    line-height:50px;
-    margin-right: 9rem;
-    position: relative;
-    left: 2.2rem;
 }
 
 .calendar-img {
