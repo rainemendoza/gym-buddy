@@ -1,0 +1,29 @@
+.loginContainer {
+  display: flex;
+  justify-content: space-between; /* Space between login box and image */
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 50px; /* Add padding for spacing */
+  background-color: #f0f2f5;
+}
+
+.loginBox {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px; /* Adjust width as needed */
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust width for the image container */
+}
+
+.logoImage {
+  object-fit: contain; /* Ensure the image fits properly */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+}
