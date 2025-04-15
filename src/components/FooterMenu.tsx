@@ -1,7 +1,6 @@
 'use client';
 
-import { Container, Row, Col } from 'react-bootstrap';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Row, Col, Nav } from 'react-bootstrap';
 import { Facebook, TwitterX, Pinterest, Instagram } from 'react-bootstrap-icons';
 
 const FooterMenu = () => (
