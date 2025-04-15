@@ -106,7 +106,9 @@
     border-radius: 2rem;
     font-weight: 400;
     letter-spacing: 0.05rem;
-    background-color: rgb(119, 136, 102);
+    color: black;
+    background-color: rgb(194, 224, 195);
+
 }
 
 .signup-button:hover{
