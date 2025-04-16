@@ -4,7 +4,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
-function ExerciseButton({ label }) {
+interface ExerciseButtonProps {
+  label: string;
+}
+
+function ExerciseButton({ label }: ExerciseButtonProps) {
   const [checked, setChecked] = useState(false);
 
   const toggleCheck = () => {
@@ -28,7 +32,7 @@ function ExerciseButton({ label }) {
           display: 'inline-block',
           marginRight: '8px',
           backgroundColor: checked ? '#0d6efd' : 'transparent',
-          transition: 'background-color 0.2s ease'
+          transition: 'background-color 0.2s ease',
         }}
       />
       {label}
