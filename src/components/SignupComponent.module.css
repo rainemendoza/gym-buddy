@@ -86,4 +86,12 @@
     text-decoration: underline;
 }
 
-/* No responsive adjustments needed if it's already narrow */
+.resetButton {
+  background-color: #e0e0e0 !important;
+  color: #333 !important;
+  margin-top: 10px;
+}
+
+.resetButton:hover {
+  background-color: #d0d0d0 !important;
+}

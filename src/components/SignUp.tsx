@@ -2,95 +2,124 @@
 
 // components/SignupComponent.js
 import React, { useState } from 'react';
-import styles from './SignupComponent.module.css'; // Import CSS Modules for this component
+import { signIn } from 'next-auth/react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import { createUser } from '@/lib/dbActions';
+import styles from './SignupComponent.module.css';
+
+type SignUpForm = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
 
 const SignupComponent = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(''); // To display validation errors
-  const handleSignup = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault(); // Prevent default form submission
-    setError(''); // Clear previous errors
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-    // --- Validation ---
-    if (password !== confirmPassword) {
-      setError('Passwords do not match!');
-      return; // Stop the signup process
-    }
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .required('Email is required')
+      .email('Email is invalid')
+      .test(
+        'is-hawaii-email',
+        'Email must be a @hawaii.edu address',
+        (value) => value?.endsWith('@hawaii.edu') || false,
+      ),
+    password: Yup.string()
+      .required('Password is required')
+      .min(8, 'Password must be at least 8 characters')
+      .max(40, 'Password must not exceed 40 characters'),
+    confirmPassword: Yup.string()
+      .required('Confirm Password is required')
+      .oneOf([Yup.ref('password'), ''], 'Passwords do not match'),
+  });
 
-    if (password.length < 8) { // Example: Minimum password length
-      setError('Password must be at least 8 characters long.');
-      return;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<SignUpForm>({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const onSubmit = async (data: SignUpForm) => {
+    try {
+      setIsSubmitting(true);
+      setSubmitError('');
+
+      // Create user in the database
+      await createUser(data);
+
+      // Sign in and redirect
+      await signIn('credentials', {
+        callbackUrl: '/home',
+        email: data.email,
+        password: data.password,
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'An error occurred during signup');
+      setIsSubmitting(false);
     }
-    // Add more validation as needed (e.g., username format)
-    // --- End of Validation ---
-    // --- Placeholder for actual signup logic ---
-    // Here you would typically make an API call to your backend
-    // to register the new user.
-    console.log('Attempting signup with:');
-    console.log('Username:', username);
-    console.log('Password:', password); // In a real app, never log passwords directly!
-    // eslint-disable-next-line no-alert
-    alert(`Signup attempt for Username: ${username}. Check console for details.`); // Replace with actual feedback
-    // Reset fields after attempt (optional)
-    // setUsername('');
-    // setPassword('');
-    // setConfirmPassword('');
-    // --- End of placeholder ---
   };
 
   return (
     <div className={styles.signupContainer}>
-      {' '}
-      {/* Similar container */}
       <div className={styles.signupBox}>
-        {' '}
-        {/* Similar box */}
         <h2>Sign Up</h2>
-        <form onSubmit={handleSignup}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="Username"
-            className={styles.inputField} // Reusing style class
-            value={username}
-            onChange={(e: { target: { value: any; }; }) => setUsername(e.target.value)}
-            required
+            placeholder="Email"
+            className={styles.inputField}
+            {...register('email')}
           />
+          {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
+
           <input
             type="password"
             placeholder="Password"
-            className={styles.inputField} // Reusing style class
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            className={styles.inputField}
+            {...register('password')}
           />
+          {errors.password && <p className={styles.errorMessage}>{errors.password.message}</p>}
+
           <input
             type="password"
             placeholder="Confirm Password"
-            className={styles.inputField} // Reusing style class
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
+            className={styles.inputField}
+            {...register('confirmPassword')}
           />
-          {error && <p className={styles.errorMessage}>{error}</p>}
-          {' '}
-          {/* Display error message */}
-          <button type="submit" className={styles.submitButton}>
-            {' '}
-            {/* Similar button style */}
-            Sign Up
+          {errors.confirmPassword && <p className={styles.errorMessage}>{errors.confirmPassword.message}</p>}
+
+          {submitError && <p className={styles.errorMessage}>{submitError}</p>}
+
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Signing Up...' : 'Sign Up'}
+          </button>
+
+          <button
+            type="button"
+            className={`${styles.submitButton} ${styles.resetButton}`}
+            onClick={() => reset()}
+            style={{ backgroundColor: '#e0e0e0', color: '#333', marginTop: '10px' }}
+          >
+            Reset
           </button>
         </form>
-        {/* Optional: Add a link back to login */}
         <p className={styles.loginLink}>
           Already have an account?
           {' '}
           <a href="/auth/signin">Log In</a>
         </p>
       </div>
-      {/* You can optionally add the logo here too if desired */}
-      {/* <div className={styles.logoContainer}> ... </div> */}
     </div>
   );
 };

@@ -43,7 +43,7 @@
   width: 100%;
   padding: 12px 15px;
   background-color: #a7c4bc; /* Button background color from image */
-  color: #3f6159; /* Darker text color for button */
+  color: #3f6159;
   border: none;
   border-radius: 4px;
   font-size: 1.1em;
@@ -61,6 +61,40 @@
   display: flex; /* Helps if you need further alignment */
   justify-content: center;
   align-items: center;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  text-align: center;
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.signupLink {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.signupLink a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+/* Add disabled button style */
+.loginButton:disabled {
+  background-color: #c8d8d3;
+  cursor: not-allowed;
 }
 
 /* Basic Responsive adjustment */
