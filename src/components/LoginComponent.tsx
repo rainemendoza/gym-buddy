@@ -37,7 +37,7 @@ const LoginComponent = () => {
         setIsLoading(false);
       } else {
         // Successful login
-        router.push('/dashboard'); // Replace with your desired redirect path
+        router.push('/profile');
       }
     } catch (err) {
       setError('An error occurred during login');
@@ -80,7 +80,7 @@ const LoginComponent = () => {
           </button>
 
           <div className={styles.signupLink}>
-            <span>Dont have an account? </span>
+            <span>Don&apos;t have an account? </span>
             <Link href="/auth/signup">
               Sign Up
             </Link>
