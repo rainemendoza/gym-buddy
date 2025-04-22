@@ -23,10 +23,18 @@ enum Role {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  password String
-  role     Role   @default(USER)
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  phone     String?
+  instagram String   @default("")
+  twitter   String   @default("")
+  linkedIn  String   @default("")
+  days      String[]
+  types     String[]
+  gender    String   @default("")
+  experience String @default("")
 }
 
 enum Condition {
