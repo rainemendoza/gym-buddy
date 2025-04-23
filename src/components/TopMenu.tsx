@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Container, Nav, Image, Offcanvas, Button } from 'react-bootstrap';
+import { useSession } from 'next-auth/react';
 
 const TopMenu = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const { data: session } = useSession();
 
   const handleClose = () => setShowOffcanvas(false);
   const handleShow = () => setShowOffcanvas(true);
@@ -29,7 +31,15 @@ const TopMenu = () => {
           <div className="d-flex align-items-center gap-4 me-5 mt-4">
             <Nav className="d-flex align-items-center gap-4">
               <Nav.Link as={Link} href="/explore">Explore</Nav.Link>
-              <Nav.Link as={Link} href="/auth/signin">Sign In</Nav.Link>
+              {session ? (
+                // If the user is signed in, show the profile icon
+                <Nav.Link as={Link} href="/profile">
+                  <i className="bi bi-person-circle" style={{ fontSize: '1.5rem' }} />
+                </Nav.Link>
+              ) : (
+                // If the user is not signed in, show the "Sign In" link
+                <Nav.Link as={Link} href="/auth/signin">Sign In</Nav.Link>
+              )}
             </Nav>
           </div>
         </Container>
