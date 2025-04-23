@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Providers from './providers';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
 
 const inter = Inter({ subsets: ['latin'] });
 
