@@ -1,89 +1,71 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { FunnelFill } from 'react-bootstrap-icons';
+import { prisma } from '@/lib/prisma';
 import TopMenu from '../../components/TopMenu';
 import FooterMenu from '../../components/FooterMenu';
 import ProfileCard from '../../components/ProfileCard';
+import { ProfileCardData } from '@/lib/ProfileCardData';
 import '../style.css';
 
-// Sample profile data until database is set up
-const sampleProfiles = [
-  {
-    firstName: 'Alex',
-    lastName: 'Johnson',
-    email: 'alex.johnson@example.com',
-    experience: 'Intermediate',
-    bio: 'Looking forward to meeting new gym buddies!',
-    picture: 'https://randomuser.me/api/portraits/men/1.jpg',
-    schedule: ['M', 'W', 'F'],
-    nextSession: 'Legs',
-  },
-  {
-    firstName: 'Sarah',
-    lastName: 'Chen',
-    email: 'sarah.chen@example.com',
-    experience: 'Advanced',
-    bio: 'Looking forward to meeting new gym buddies!',
-    picture: 'https://randomuser.me/api/portraits/women/2.jpg',
-    schedule: ['T', 'Th', 'Su'],
-    nextSession: 'Chest',
-  },
-  {
-    firstName: 'Miguel',
-    lastName: 'Rodriguez',
-    email: 'miguel.r@example.com',
-    experience: 'Beginner',
-    bio: 'Looking forward to meeting new gym buddies!',
-    picture: 'https://randomuser.me/api/portraits/men/3.jpg',
-    schedule: ['Sa', 'Su'],
-    nextSession: 'Back',
-  },
-  {
-    firstName: 'Emily',
-    lastName: 'Taylor',
-    email: 'emily.t@example.com',
-    experience: 'Intermediate',
-    bio: 'Looking forward to meeting new gym buddies!',
-    picture: 'https://randomuser.me/api/portraits/women/4.jpg',
-    schedule: ['Su', 'M', 'T'],
-    nextSession: 'Arms',
-  },
-  {
-    firstName: 'David',
-    lastName: 'Kim',
-    email: 'david.kim@example.com',
-    experience: 'Athlete',
-    bio: 'Looking forward to meeting new gym buddies!',
-    picture: 'https://randomuser.me/api/portraits/men/5.jpg',
-    schedule: ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'],
-    nextSession: 'Abs',
-  },
-];
+// Fetch users from the database
+async function getUsers() {
+  try {
+    const users = await prisma.user.findMany({
+      select: {
+        id: true,
+        email: true,
+        phone: true,
+        instagram: true,
+        twitter: true,
+        linkedIn: true,
+        days: true,
+        types: true,
+        gender: true,
+        experience: true
+      }
+    });
+    return users as ProfileCardData[];
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    return [];
+  }
+}
 
-const Explore = () => (
-  <main className="bg-light min-vh-100">
-    <TopMenu />
+const Explore = async () => {
+  const users = await getUsers();
 
-    <Container className="py-5">
-      <Col className="d-flex justify-content-between mb-4">
-        <div>
-          <h2 className="fw-bold mb-0">Find Your Gym Partner</h2>
-        </div>
-        <div>
-          <button type="button" className="btn btn-outline-dark">
-            <FunnelFill />
-          </button>
-        </div>
-      </Col>
+  return (
+    <main className="bg-light min-vh-100">
+      <TopMenu />
 
-      <Row xs={1} sm={2} lg={3} xl={4} className="g-4">
-        {sampleProfiles.map((profile) => (
-          <ProfileCard key={profile.email} profile={profile} />
-        ))}
-      </Row>
-    </Container>
+      <Container className="py-5">
+        <Col className="d-flex justify-content-between mb-4">
+          <div>
+            <h2 className="fw-bold mb-0">Find Your Gym Partner</h2>
+          </div>
+          <div>
+            <button type="button" className="btn btn-outline-dark">
+              <FunnelFill />
+            </button>
+          </div>
+        </Col>
 
-    <FooterMenu />
-  </main>
-);
+        <Row xs={1} sm={2} lg={3} xl={4} className="g-4">
+          {users.length > 0 ? (
+            users.map((profile) => (
+              <ProfileCard key={profile.id} profile={profile} />
+            ))
+          ) : (
+            <Col>
+              <p>No gym partners found. Be the first to sign up!</p>
+            </Col>
+          )}
+        </Row>
+      </Container>
+
+      <FooterMenu />
+    </main>
+  );
+};
 
 export default Explore;

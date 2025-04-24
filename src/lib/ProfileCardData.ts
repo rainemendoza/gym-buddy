@@ -1,13 +1,13 @@
-// import { Project } from '@prisma/client';
 
 export type ProfileCardData = {
+  id: number;
   email: string;
-  bio: string | null;
-  firstName: string | null;
-  lastName: string | null;
-  picture: string | null;
-  experience: string | null;
-  // projects: Project[];
-  schedule: string[] | null;
-  nextSession: string | null;
+  phone?: string | null;
+  instagram: string;
+  twitter: string;
+  linkedIn: string;
+  days: string[];
+  types: string[];
+  gender: string;
+  experience: string;
 };
