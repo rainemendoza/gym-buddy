@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Providers from './providers';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
+// eslint-disable-next-line import/order
+import SessionWrapper from '@/components/SessionWrapper'; // Import the wrapper
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={classString}>
         <Providers>
-          {children}
+          <SessionWrapper>{children}</SessionWrapper>
         </Providers>
       </body>
     </html>

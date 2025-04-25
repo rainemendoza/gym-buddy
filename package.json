@@ -17,10 +17,10 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
-    "@playwright/test": "^1.48.2",
     "@hookform/resolvers": "^3.6.0",
     "@ngneat/falso": "^7.2.0",
-    "@prisma/client": "^5.16.1",
+    "@playwright/test": "^1.48.2",
+    "@prisma/client": "^5.22.0",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
@@ -29,8 +29,8 @@
     "next-auth": "^4.24.11",
     "prop-types": "^15.8.1",
     "react": "^18",
-    "react-bootstrap": "^2.10.4",
-    "react-bootstrap-icons": "^1.11.4",
+    "react-bootstrap": "^2.10.9",
+    "react-bootstrap-icons": "^1.11.5",
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
     "sweetalert": "^2.1.2",
@@ -50,7 +50,7 @@
     "playwright": "^1.52.0",
     "prettier": "^3.3.1",
     "prettier-eslint": "^16.3.0",
-    "prisma": "^5.19.1",
+    "prisma": "^5.22.0",
     "typescript": "^5.4.5"
   }
 }
