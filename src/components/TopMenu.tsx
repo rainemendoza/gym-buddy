@@ -26,7 +26,7 @@ const TopMenu = () => {
               ☰
             </Button>
             {/* Left side: Logo */}
-            <Navbar.Brand as={Link} href="/">
+            <Navbar.Brand as={Link} href="/home">
               <Image src="/image.png" alt="Logo" fluid className="logo" />
             </Navbar.Brand>
           </div>
