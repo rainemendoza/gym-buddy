@@ -13,7 +13,7 @@ const TopMenu = () => {
   const handleShow = () => setShowOffcanvas(true);
   const handleLogout = () => {
     handleClose();
-    signOut();
+    signOut({ callbackUrl: '/' });
   };
 
   return (
@@ -61,7 +61,7 @@ const TopMenu = () => {
             <Nav.Link className="nav-link2" as={Link} href="/about" onClick={handleClose}>About Us</Nav.Link>
             <Nav.Link className="nav-link2" as={Link} href="/contact" onClick={handleClose}>Contact</Nav.Link>
             <Nav.Link className="nav-link2" as={Link} href="/faq" onClick={handleClose}>FAQ</Nav.Link>
-            <Nav.Link className="nav-link2" as={Link} href="/logout" onClick={handleLogout}>Logout</Nav.Link>
+            <Nav.Link className="nav-link2" as="button" onClick={handleLogout}>Logout</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
